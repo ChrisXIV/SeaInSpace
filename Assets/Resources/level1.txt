@@ -1,0 +1,7 @@
+1,2,UP,FighterSquadron,1;
+2,3,DOWN,FighterSquadron,1;
+5,6,LEFT,Fighter,2;
+5,5,UP,Debris,0;
+5,4,UP,Debris,0;
+1,1,UP,Debris,0;
+2,1,UP,Debris,0;
