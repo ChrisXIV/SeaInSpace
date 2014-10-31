@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Ship : MonoBehaviour {
 
+	public int numberOfMoves;
 	public bool stackWithSpaceObjects;
 	public Stack moves;
 	public Position position;

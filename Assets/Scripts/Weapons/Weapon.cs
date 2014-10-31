@@ -3,10 +3,8 @@ using System.Collections;
 
 public class Weapon : MonoBehaviour {
 
-	public int shieldDamage {get; private set;}
-	public int hullDamage {get; private set;}
+	public int damage {get; private set;}
 	public int range {get; private set;}
-	public int rechargeTime {get; private set;}
 
 	// Use this for initialization
 	void Start () {

@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Debris : MonoBehaviour {
+public class Debris : SpaceObject {
 
+
+	//public 
 	// Use this for initialization
 	void Start () {
 	
