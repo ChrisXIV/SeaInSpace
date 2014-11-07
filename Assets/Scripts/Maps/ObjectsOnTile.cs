@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ObjectsOnTile : MonoBehaviour {
+public class ObjectsOnTile {
 
 	public Ship ship {get; set;}
 	public Debris debris {get; set;}

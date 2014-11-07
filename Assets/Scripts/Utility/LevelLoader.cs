@@ -33,7 +33,9 @@ public class LevelLoader : MonoBehaviour {
 			//First line consists of the X and Y values for the map size
 			string tmp = reader.ReadLine();
 			string[] elements = tmp.Split(',');
-			GameManager.instance.CreateLevel(int.Parse(elements[0]),int.Parse (elements[1]));
+			Map map = GameManager.instance.CreateLevel(int.Parse(elements[0]),int.Parse (elements[1]));
+
+			Debug.Log (map);
 
 			//read in any objects on the level and instantiate them
 			while ((tmp = reader.ReadLine()) != null )

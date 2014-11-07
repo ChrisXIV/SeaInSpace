@@ -3,10 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour {
-
+	
 	public static GameManager instance;
 	public Ship selectedShip;
 	public Map map;
+	public GameObject TilePrefab;
+
+	public LevelLoader loader;
 
 	void Awake() 
 	{
@@ -15,7 +18,7 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		LevelLoader loader = new LevelLoader();
+		loader = gameObject.AddComponent<LevelLoader>();
 		loader.LoadLevel(1);
 	}
 	
@@ -31,18 +34,13 @@ public class GameManager : MonoBehaviour {
 		// TODO GUI, change color
 	}
 
-	public void CreateLevel(int X, int Y)
-	{ /*
-		map = new List<List<Tile>> ();
-		for (int i=0; i<X; i++) {
-			List<Tile> row = new List<Tile> ();
-			for (int j=0; j<Y; j++) {
-				Tile tile = ((GameObject)Instantiate (TilePrefab, new Vector3 (i, 0, j), Quaternion.Euler (new Vector3 ()))).GetComponent<Tile> (); 
-				tile.gridPosition = new Vector3 (i, 0, j);
-				row.Add (tile);
-			}
-			map.Add (row);
-		}
-		*/
+	public Map CreateLevel(int X, int Y)
+	{ 
+		map = gameObject.AddComponent<Map>();
+		map.mapSizeX = X;
+		map.mapSizeY = Y;
+		map.TilePrefab = TilePrefab;
+		//map = new Map(X, Y, TilePrefab);
+		return map;
 	}
 }
